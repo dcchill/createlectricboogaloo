@@ -1,5 +1,6 @@
 package net.createelectricboogaloo.procedures;
 
+import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.fluids.capability.IFluidHandler;
 import net.minecraftforge.common.capabilities.ForgeCapabilities;
 
@@ -7,6 +8,10 @@ import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.Level;
+import net.minecraft.sounds.SoundSource;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.BlockPos;
 
@@ -50,7 +55,15 @@ public class CombussinEngineUpdateTickProcedure {
 					if (_bs.getBlock().getStateDefinition().getProperty("animation") instanceof IntegerProperty _integerProp && _integerProp.getPossibleValues().contains(_value))
 						world.setBlock(_pos, _bs.setValue(_integerProp, _value), 3);
 				}
-				world.addParticle(ParticleTypes.CAMPFIRE_COSY_SMOKE, (z - 1), y, z, 0, 1, 0);
+				if (world instanceof ServerLevel _level)
+					_level.sendParticles(ParticleTypes.CAMPFIRE_COSY_SMOKE, (x - 0.8), (y + 1.2), (z - 2), 1, 0, 0.1, 0, 0.01);
+				if (world instanceof Level _level) {
+					if (!_level.isClientSide()) {
+						_level.playSound(null, new BlockPos(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("block.metal_pressure_plate.click_off")), SoundSource.BLOCKS, (float) 0.1, (float) 0.1);
+					} else {
+						_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("block.metal_pressure_plate.click_off")), SoundSource.BLOCKS, (float) 0.1, (float) 0.1, false);
+					}
+				}
 			}
 		}
 		if ((new Object() {
@@ -89,7 +102,15 @@ public class CombussinEngineUpdateTickProcedure {
 					if (_bs.getBlock().getStateDefinition().getProperty("animation") instanceof IntegerProperty _integerProp && _integerProp.getPossibleValues().contains(_value))
 						world.setBlock(_pos, _bs.setValue(_integerProp, _value), 3);
 				}
-				world.addParticle(ParticleTypes.CAMPFIRE_COSY_SMOKE, (z + 1), y, z, 0, 1, 0);
+				if (world instanceof ServerLevel _level)
+					_level.sendParticles(ParticleTypes.CAMPFIRE_COSY_SMOKE, (x + 0.8), (y + 1.2), (z + 2), 1, 0, 0.1, 0, 0.01);
+				if (world instanceof Level _level) {
+					if (!_level.isClientSide()) {
+						_level.playSound(null, new BlockPos(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("block.metal_pressure_plate.click_off")), SoundSource.BLOCKS, (float) 0.1, (float) 0.1);
+					} else {
+						_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("block.metal_pressure_plate.click_off")), SoundSource.BLOCKS, (float) 0.1, (float) 0.1, false);
+					}
+				}
 			}
 		}
 		if ((new Object() {
@@ -128,7 +149,15 @@ public class CombussinEngineUpdateTickProcedure {
 					if (_bs.getBlock().getStateDefinition().getProperty("animation") instanceof IntegerProperty _integerProp && _integerProp.getPossibleValues().contains(_value))
 						world.setBlock(_pos, _bs.setValue(_integerProp, _value), 3);
 				}
-				world.addParticle(ParticleTypes.CAMPFIRE_COSY_SMOKE, (x - 1), y, z, 0, 1, 0);
+				if (world instanceof ServerLevel _level)
+					_level.sendParticles(ParticleTypes.CAMPFIRE_COSY_SMOKE, (x - 2), (y + 1.2), (z + 0.8), 1, 0, 0.1, 0, 0.01);
+				if (world instanceof Level _level) {
+					if (!_level.isClientSide()) {
+						_level.playSound(null, new BlockPos(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("block.metal_pressure_plate.click_off")), SoundSource.BLOCKS, (float) 0.1, (float) 0.1);
+					} else {
+						_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("block.metal_pressure_plate.click_off")), SoundSource.BLOCKS, (float) 0.1, (float) 0.1, false);
+					}
+				}
 			}
 		}
 		if ((new Object() {
@@ -167,26 +196,16 @@ public class CombussinEngineUpdateTickProcedure {
 					if (_bs.getBlock().getStateDefinition().getProperty("animation") instanceof IntegerProperty _integerProp && _integerProp.getPossibleValues().contains(_value))
 						world.setBlock(_pos, _bs.setValue(_integerProp, _value), 3);
 				}
-				world.addParticle(ParticleTypes.CAMPFIRE_COSY_SMOKE, (x + 1), y, z, 0, 1, 0);
+				if (world instanceof ServerLevel _level)
+					_level.sendParticles(ParticleTypes.CAMPFIRE_COSY_SMOKE, (x + 2), (y + 1.2), (z - 0.8), 1, 0, 0.1, 0, 0.01);
+				if (world instanceof Level _level) {
+					if (!_level.isClientSide()) {
+						_level.playSound(null, new BlockPos(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("block.metal_pressure_plate.click_off")), SoundSource.BLOCKS, (float) 0.1, (float) 0.1);
+					} else {
+						_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("block.metal_pressure_plate.click_off")), SoundSource.BLOCKS, (float) 0.1, (float) 0.1, false);
+					}
+				}
 			}
-		}
-		if (new Object() {
-			public int drainTankSimulate(LevelAccessor level, BlockPos pos, int amount) {
-				AtomicInteger _retval = new AtomicInteger(0);
-				BlockEntity _ent = level.getBlockEntity(pos);
-				if (_ent != null)
-					_ent.getCapability(ForgeCapabilities.FLUID_HANDLER, null).ifPresent(capability -> _retval.set(capability.drain(amount, IFluidHandler.FluidAction.SIMULATE).getAmount()));
-				return _retval.get();
-			}
-		}.drainTankSimulate(world, new BlockPos(x + 1, y, z), 10) <= 1) {
-			{
-				int _value = 0;
-				BlockPos _pos = new BlockPos(x, y, z);
-				BlockState _bs = world.getBlockState(_pos);
-				if (_bs.getBlock().getStateDefinition().getProperty("animation") instanceof IntegerProperty _integerProp && _integerProp.getPossibleValues().contains(_value))
-					world.setBlock(_pos, _bs.setValue(_integerProp, _value), 3);
-			}
-			world.addParticle(ParticleTypes.POOF, (x + 1), y, z, 0, 1, 0);
 		}
 	}
 }

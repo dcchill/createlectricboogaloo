@@ -2,6 +2,7 @@ package net.createelectricboogaloo.procedures;
 
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.Entity;
@@ -15,6 +16,11 @@ public class CombussinEngineBlockAddedProcedure {
 		if (entity == null)
 			return;
 		if ((entity.getDirection()) == Direction.NORTH) {
+			{
+				BlockPos _pos = new BlockPos(x, y, z - 1);
+				Block.dropResources(world.getBlockState(_pos), world, new BlockPos(x, y, z), null);
+				world.destroyBlock(_pos, false);
+			}
 			world.setBlock(new BlockPos(x, y, z - 1), CreateelectricboogalooModBlocks.COMBUSSIN_ENGINE_PART.get().defaultBlockState(), 3);
 			if (!world.isClientSide()) {
 				BlockPos _bp = new BlockPos(x, y, z);
@@ -27,6 +33,11 @@ public class CombussinEngineBlockAddedProcedure {
 			}
 		}
 		if ((entity.getDirection()) == Direction.SOUTH) {
+			{
+				BlockPos _pos = new BlockPos(x, y, z + 1);
+				Block.dropResources(world.getBlockState(_pos), world, new BlockPos(x, y, z), null);
+				world.destroyBlock(_pos, false);
+			}
 			world.setBlock(new BlockPos(x, y, z + 1), CreateelectricboogalooModBlocks.COMBUSSIN_ENGINE_PART.get().defaultBlockState(), 3);
 			if (!world.isClientSide()) {
 				BlockPos _bp = new BlockPos(x, y, z);
@@ -39,6 +50,11 @@ public class CombussinEngineBlockAddedProcedure {
 			}
 		}
 		if ((entity.getDirection()) == Direction.WEST) {
+			{
+				BlockPos _pos = new BlockPos(x - 1, y, z);
+				Block.dropResources(world.getBlockState(_pos), world, new BlockPos(x, y, z), null);
+				world.destroyBlock(_pos, false);
+			}
 			world.setBlock(new BlockPos(x - 1, y, z), CreateelectricboogalooModBlocks.COMBUSSIN_ENGINE_PART.get().defaultBlockState(), 3);
 			if (!world.isClientSide()) {
 				BlockPos _bp = new BlockPos(x, y, z);
@@ -51,6 +67,11 @@ public class CombussinEngineBlockAddedProcedure {
 			}
 		}
 		if ((entity.getDirection()) == Direction.EAST) {
+			{
+				BlockPos _pos = new BlockPos(x + 1, y, z);
+				Block.dropResources(world.getBlockState(_pos), world, new BlockPos(x, y, z), null);
+				world.destroyBlock(_pos, false);
+			}
 			world.setBlock(new BlockPos(x + 1, y, z), CreateelectricboogalooModBlocks.COMBUSSIN_ENGINE_PART.get().defaultBlockState(), 3);
 			if (!world.isClientSide()) {
 				BlockPos _bp = new BlockPos(x, y, z);

@@ -20,12 +20,6 @@ authors="lucky, MCreator"
 
 
 [[dependencies.createelectricboogaloo]]
-    modId="curios_api"
-    mandatory=false
-    versionRange="[0,)"
-    ordering="NONE"
-    side="BOTH"
-[[dependencies.createelectricboogaloo]]
     modId="geckolib"
     mandatory=false
     versionRange="[0,)"
