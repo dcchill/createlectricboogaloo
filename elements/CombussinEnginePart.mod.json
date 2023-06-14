@@ -117,6 +117,9 @@
     "isFluidTank": true,
     "fluidCapacity": 8000,
     "fluidRestrictions": [],
+    "onDestroyedByPlayer": {
+      "name": "CombussinEnginePartBlockDestroyedByPlayer"
+    },
     "spawnWorldTypes": [],
     "restrictionBiomes": [],
     "blocksToReplace": [

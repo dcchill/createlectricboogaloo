@@ -178,7 +178,7 @@ public class CombussinEngineUpdateTickProcedure {
 					_ent.getCapability(ForgeCapabilities.FLUID_HANDLER, null).ifPresent(capability -> _retval.set(capability.drain(amount, IFluidHandler.FluidAction.SIMULATE).getAmount()));
 				return _retval.get();
 			}
-		}.drainTankSimulate(world, new BlockPos(x + 1, y, z), 1) >= 0) {
+		}.drainTankSimulate(world, new BlockPos(x + 1, y, z), 10) <= 1) {
 			{
 				int _value = 0;
 				BlockPos _pos = new BlockPos(x, y, z);

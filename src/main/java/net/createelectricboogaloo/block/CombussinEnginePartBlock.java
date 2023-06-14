@@ -6,6 +6,7 @@ import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.level.material.Material;
+import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.entity.BlockEntity;
@@ -21,6 +22,7 @@ import net.minecraft.world.MenuProvider;
 import net.minecraft.world.Containers;
 import net.minecraft.core.BlockPos;
 
+import net.createelectricboogaloo.procedures.CombussinEnginePartBlockDestroyedByPlayerProcedure;
 import net.createelectricboogaloo.init.CreateelectricboogalooModBlocks;
 import net.createelectricboogaloo.block.entity.CombussinEnginePartBlockEntity;
 
@@ -42,6 +44,13 @@ public class CombussinEnginePartBlock extends Block implements EntityBlock {
 	@Override
 	public ItemStack getCloneItemStack(BlockState state, HitResult target, BlockGetter world, BlockPos pos, Player player) {
 		return new ItemStack(CreateelectricboogalooModBlocks.COMBUSSIN_ENGINE.get());
+	}
+
+	@Override
+	public boolean onDestroyedByPlayer(BlockState blockstate, Level world, BlockPos pos, Player entity, boolean willHarvest, FluidState fluid) {
+		boolean retval = super.onDestroyedByPlayer(blockstate, world, pos, entity, willHarvest, fluid);
+		CombussinEnginePartBlockDestroyedByPlayerProcedure.execute(world, pos.getX(), pos.getY(), pos.getZ());
+		return retval;
 	}
 
 	@Override
