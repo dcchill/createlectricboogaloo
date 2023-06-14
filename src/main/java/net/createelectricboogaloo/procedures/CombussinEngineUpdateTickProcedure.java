@@ -7,6 +7,7 @@ import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.BlockPos;
 
 import java.util.concurrent.atomic.AtomicInteger;
@@ -49,6 +50,7 @@ public class CombussinEngineUpdateTickProcedure {
 					if (_bs.getBlock().getStateDefinition().getProperty("animation") instanceof IntegerProperty _integerProp && _integerProp.getPossibleValues().contains(_value))
 						world.setBlock(_pos, _bs.setValue(_integerProp, _value), 3);
 				}
+				world.addParticle(ParticleTypes.CAMPFIRE_COSY_SMOKE, (z - 1), y, z, 0, 1, 0);
 			}
 		}
 		if ((new Object() {
@@ -87,6 +89,7 @@ public class CombussinEngineUpdateTickProcedure {
 					if (_bs.getBlock().getStateDefinition().getProperty("animation") instanceof IntegerProperty _integerProp && _integerProp.getPossibleValues().contains(_value))
 						world.setBlock(_pos, _bs.setValue(_integerProp, _value), 3);
 				}
+				world.addParticle(ParticleTypes.CAMPFIRE_COSY_SMOKE, (z + 1), y, z, 0, 1, 0);
 			}
 		}
 		if ((new Object() {
@@ -125,6 +128,7 @@ public class CombussinEngineUpdateTickProcedure {
 					if (_bs.getBlock().getStateDefinition().getProperty("animation") instanceof IntegerProperty _integerProp && _integerProp.getPossibleValues().contains(_value))
 						world.setBlock(_pos, _bs.setValue(_integerProp, _value), 3);
 				}
+				world.addParticle(ParticleTypes.CAMPFIRE_COSY_SMOKE, (x - 1), y, z, 0, 1, 0);
 			}
 		}
 		if ((new Object() {
@@ -163,7 +167,26 @@ public class CombussinEngineUpdateTickProcedure {
 					if (_bs.getBlock().getStateDefinition().getProperty("animation") instanceof IntegerProperty _integerProp && _integerProp.getPossibleValues().contains(_value))
 						world.setBlock(_pos, _bs.setValue(_integerProp, _value), 3);
 				}
+				world.addParticle(ParticleTypes.CAMPFIRE_COSY_SMOKE, (x + 1), y, z, 0, 1, 0);
 			}
+		}
+		if (new Object() {
+			public int drainTankSimulate(LevelAccessor level, BlockPos pos, int amount) {
+				AtomicInteger _retval = new AtomicInteger(0);
+				BlockEntity _ent = level.getBlockEntity(pos);
+				if (_ent != null)
+					_ent.getCapability(ForgeCapabilities.FLUID_HANDLER, null).ifPresent(capability -> _retval.set(capability.drain(amount, IFluidHandler.FluidAction.SIMULATE).getAmount()));
+				return _retval.get();
+			}
+		}.drainTankSimulate(world, new BlockPos(x + 1, y, z), 1) >= 0) {
+			{
+				int _value = 0;
+				BlockPos _pos = new BlockPos(x, y, z);
+				BlockState _bs = world.getBlockState(_pos);
+				if (_bs.getBlock().getStateDefinition().getProperty("animation") instanceof IntegerProperty _integerProp && _integerProp.getPossibleValues().contains(_value))
+					world.setBlock(_pos, _bs.setValue(_integerProp, _value), 3);
+			}
+			world.addParticle(ParticleTypes.POOF, (x + 1), y, z, 0, 1, 0);
 		}
 	}
 }
