@@ -104,6 +104,37 @@
           }
         ]
       }
+    },
+    {
+      "name": "CombussinEngineBlockDestroyedByPlayer",
+      "type": "procedure",
+      "sortid": 5,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "combussin_engine_block_destroyed_by_player",
+      "metadata": {
+        "files": [
+          "src/main/java/net/createelectricboogaloo/procedures/CombussinEngineBlockDestroyedByPlayerProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
     }
   ],
   "variable_elements": [],

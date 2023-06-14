@@ -25,6 +25,7 @@
     {
       "name": "CombussinEngineUpdateTick",
       "type": "procedure",
+      "sortid": 4,
       "compiles": true,
       "locked_code": false,
       "registry_name": "combussin_engine_update_tick",
@@ -66,6 +67,72 @@
           "src/main/java/net/createelectricboogaloo/block/entity/CombussinEnginePartBlockEntity.java",
           "src/main/resources/assets/createelectricboogaloo/blockstates/combussin_engine_part.json",
           "src/main/resources/assets/createelectricboogaloo/models/block/combussin_engine_part.json"
+        ]
+      }
+    },
+    {
+      "name": "CombussinEngineBlockAdded",
+      "type": "procedure",
+      "sortid": 3,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "combussin_engine_block_added",
+      "metadata": {
+        "files": [
+          "src/main/java/net/createelectricboogaloo/procedures/CombussinEngineBlockAddedProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "CombussinEngineBlockDestroyedByPlayer",
+      "type": "procedure",
+      "sortid": 5,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "combussin_engine_block_destroyed_by_player",
+      "metadata": {
+        "files": [
+          "src/main/java/net/createelectricboogaloo/procedures/CombussinEngineBlockDestroyedByPlayerProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
         ]
       }
     }

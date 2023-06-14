@@ -17,7 +17,7 @@
     "particleTexture": "",
     "tintType": "No tint",
     "isItemTinted": false,
-    "hasTransparency": false,
+    "hasTransparency": true,
     "connectedSides": false,
     "transparencyType": "SOLID",
     "disableOffset": false,
@@ -28,7 +28,7 @@
         "mz": 0.0,
         "Mx": 16.0,
         "My": 16.0,
-        "Mz": 16.0,
+        "Mz": 32.0,
         "subtract": false
       }
     ],

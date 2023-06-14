@@ -1,6 +1,8 @@
 
 package net.createelectricboogaloo.block;
 
+import net.minecraft.world.phys.shapes.VoxelShape;
+import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraft.world.level.material.Material;
 import net.minecraft.world.level.material.FluidState;
@@ -47,7 +49,7 @@ public class CombussinEngineBlock extends BaseEntityBlock implements EntityBlock
 	public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
 
 	public CombussinEngineBlock() {
-		super(BlockBehaviour.Properties.of(Material.HEAVY_METAL).sound(SoundType.METAL).strength(1f, 10f));
+		super(BlockBehaviour.Properties.of(Material.HEAVY_METAL).sound(SoundType.METAL).strength(1f, 10f).noOcclusion().isRedstoneConductor((bs, br, bp) -> false));
 		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH));
 	}
 
@@ -70,6 +72,17 @@ public class CombussinEngineBlock extends BaseEntityBlock implements EntityBlock
 	@Override
 	public int getLightBlock(BlockState state, BlockGetter worldIn, BlockPos pos) {
 		return 0;
+	}
+
+	@Override
+	public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
+
+		return switch (state.getValue(FACING)) {
+			default -> box(0, 0, -16, 16, 16, 16);
+			case NORTH -> box(0, 0, 0, 16, 16, 32);
+			case EAST -> box(-16, 0, 0, 16, 16, 16);
+			case WEST -> box(0, 0, 0, 32, 16, 16);
+		};
 	}
 
 	@Override
