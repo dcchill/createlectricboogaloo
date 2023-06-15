@@ -10,15 +10,15 @@
       "metadata": {
         "files": [
           "src/main/java/net/createelectricboogaloo/block/entity/CombussinEngineTileEntity.java",
-          "src/main/java/net/createelectricboogaloo/block/model/CombussinEngineBlockModel.java",
-          "src/main/java/net/createelectricboogaloo/block/renderer/CombussinEngineDisplayItemRenderer.java",
-          "src/main/java/net/createelectricboogaloo/block/renderer/CombussinEngineTileRenderer.java",
           "src/main/java/net/createelectricboogaloo/block/CombussinEngineBlock.java",
+          "src/main/java/net/createelectricboogaloo/block/display/CombussinEngineDisplayItem.java",
+          "src/main/resources/assets/createelectricboogaloo/models/item/combussin_engine.json",
+          "src/main/java/net/createelectricboogaloo/block/renderer/CombussinEngineTileRenderer.java",
+          "src/main/java/net/createelectricboogaloo/block/renderer/CombussinEngineDisplayItemRenderer.java",
+          "src/main/java/net/createelectricboogaloo/block/model/CombussinEngineBlockModel.java",
           "src/main/java/net/createelectricboogaloo/block/model/CombussinEngineDisplayModel.java",
           "src/main/resources/assets/createelectricboogaloo/models/custom/combussin_engine_particle.json",
-          "src/main/java/net/createelectricboogaloo/block/display/CombussinEngineDisplayItem.java",
-          "src/main/resources/assets/createelectricboogaloo/blockstates/combussin_engine.json",
-          "src/main/resources/assets/createelectricboogaloo/models/item/combussin_engine.json"
+          "src/main/resources/assets/createelectricboogaloo/blockstates/combussin_engine.json"
         ]
       }
     },
@@ -62,11 +62,11 @@
       "registry_name": "combussin_engine_part",
       "metadata": {
         "files": [
-          "src/main/java/net/createelectricboogaloo/block/CombussinEnginePartBlock.java",
           "src/main/resources/assets/createelectricboogaloo/models/item/combussin_engine_part.json",
+          "src/main/resources/assets/createelectricboogaloo/models/block/combussin_engine_part.json",
           "src/main/java/net/createelectricboogaloo/block/entity/CombussinEnginePartBlockEntity.java",
           "src/main/resources/assets/createelectricboogaloo/blockstates/combussin_engine_part.json",
-          "src/main/resources/assets/createelectricboogaloo/models/block/combussin_engine_part.json"
+          "src/main/java/net/createelectricboogaloo/block/CombussinEnginePartBlock.java"
         ]
       }
     },
@@ -166,12 +166,35 @@
           }
         ]
       }
+    },
+    {
+      "name": "ArcSmelter",
+      "type": "animatedblock",
+      "sortid": 7,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "arc_smelter",
+      "metadata": {
+        "files": [
+          "src/main/java/net/createelectricboogaloo/block/renderer/ArcSmelterDisplayItemRenderer.java",
+          "src/main/java/net/createelectricboogaloo/block/model/ArcSmelterDisplayModel.java",
+          "src/main/java/net/createelectricboogaloo/block/entity/ArcSmelterTileEntity.java",
+          "src/main/java/net/createelectricboogaloo/block/display/ArcSmelterDisplayItem.java",
+          "src/main/resources/assets/createelectricboogaloo/models/custom/arc_smelter_particle.json",
+          "src/main/resources/assets/createelectricboogaloo/models/item/arc_smelter.json",
+          "src/main/java/net/createelectricboogaloo/block/renderer/ArcSmelterTileRenderer.java",
+          "src/main/java/net/createelectricboogaloo/block/ArcSmelterBlock.java",
+          "src/main/resources/assets/createelectricboogaloo/blockstates/arc_smelter.json",
+          "src/main/java/net/createelectricboogaloo/block/model/ArcSmelterBlockModel.java"
+        ]
+      }
     }
   ],
   "variable_elements": [],
   "sound_elements": [],
   "language_map": {
     "en_us": {
+      "block.createelectricboogaloo.arc_smelter": "Arc Smelter",
       "block.createelectricboogaloo.combussin_engine": "Combussin Engine",
       "block.createelectricboogaloo.combussin_engine_part": "Combussin Engine Part"
     }
@@ -193,7 +216,6 @@
     "dependencies": [],
     "dependants": [],
     "mcreatorDependencies": [
-      "curios_api",
       "geckolib",
       "allmods"
     ],

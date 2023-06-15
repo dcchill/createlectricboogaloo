@@ -1,0 +1,27 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "createelectricboogaloo:custom/arc_smelter_particle"
+    },
+    "facing=east": {
+      "model": "createelectricboogaloo:custom/arc_smelter_particle",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "createelectricboogaloo:custom/arc_smelter_particle",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "createelectricboogaloo:custom/arc_smelter_particle",
+      "y": 270
+    },
+    "facing=up": {
+      "model": "createelectricboogaloo:custom/arc_smelter_particle",
+      "x": 270
+    },
+    "facing=down": {
+      "model": "createelectricboogaloo:custom/arc_smelter_particle",
+      "x": 90
+    }
+  }
+}

@@ -1,0 +1,7 @@
+
+{
+  "parent": "createelectricboogaloo:displaysettings/arcsmelter.item",
+  "textures": {
+    "particle": "createelectricboogaloo:blocks/arcsmelttexture"
+  }
+}
