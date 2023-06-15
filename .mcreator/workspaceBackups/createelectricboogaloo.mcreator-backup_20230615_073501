@@ -10,15 +10,15 @@
       "metadata": {
         "files": [
           "src/main/java/net/createelectricboogaloo/block/entity/CombussinEngineTileEntity.java",
-          "src/main/java/net/createelectricboogaloo/block/model/CombussinEngineBlockModel.java",
-          "src/main/java/net/createelectricboogaloo/block/renderer/CombussinEngineDisplayItemRenderer.java",
-          "src/main/java/net/createelectricboogaloo/block/renderer/CombussinEngineTileRenderer.java",
           "src/main/java/net/createelectricboogaloo/block/CombussinEngineBlock.java",
+          "src/main/java/net/createelectricboogaloo/block/display/CombussinEngineDisplayItem.java",
+          "src/main/resources/assets/createelectricboogaloo/models/item/combussin_engine.json",
+          "src/main/java/net/createelectricboogaloo/block/renderer/CombussinEngineTileRenderer.java",
+          "src/main/java/net/createelectricboogaloo/block/renderer/CombussinEngineDisplayItemRenderer.java",
+          "src/main/java/net/createelectricboogaloo/block/model/CombussinEngineBlockModel.java",
           "src/main/java/net/createelectricboogaloo/block/model/CombussinEngineDisplayModel.java",
           "src/main/resources/assets/createelectricboogaloo/models/custom/combussin_engine_particle.json",
-          "src/main/java/net/createelectricboogaloo/block/display/CombussinEngineDisplayItem.java",
-          "src/main/resources/assets/createelectricboogaloo/blockstates/combussin_engine.json",
-          "src/main/resources/assets/createelectricboogaloo/models/item/combussin_engine.json"
+          "src/main/resources/assets/createelectricboogaloo/blockstates/combussin_engine.json"
         ]
       }
     },
@@ -62,11 +62,11 @@
       "registry_name": "combussin_engine_part",
       "metadata": {
         "files": [
-          "src/main/java/net/createelectricboogaloo/block/CombussinEnginePartBlock.java",
           "src/main/resources/assets/createelectricboogaloo/models/item/combussin_engine_part.json",
+          "src/main/resources/assets/createelectricboogaloo/models/block/combussin_engine_part.json",
           "src/main/java/net/createelectricboogaloo/block/entity/CombussinEnginePartBlockEntity.java",
           "src/main/resources/assets/createelectricboogaloo/blockstates/combussin_engine_part.json",
-          "src/main/resources/assets/createelectricboogaloo/models/block/combussin_engine_part.json"
+          "src/main/java/net/createelectricboogaloo/block/CombussinEnginePartBlock.java"
         ]
       }
     },
@@ -193,7 +193,6 @@
     "dependencies": [],
     "dependants": [],
     "mcreatorDependencies": [
-      "curios_api",
       "geckolib",
       "allmods"
     ],
