@@ -1,6 +1,0 @@
-{
-  "parent": "createelectricboogaloo:displaysettings/modelcombussin.item",
-  "textures": {
-    "particle": "createelectricboogaloo:blocks/ctexture"
-  }
-}

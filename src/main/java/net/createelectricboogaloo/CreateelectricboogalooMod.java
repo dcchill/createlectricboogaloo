@@ -31,10 +31,6 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.FriendlyByteBuf;
 
-import net.createelectricboogaloo.init.CreateelectricboogalooModItems;
-import net.createelectricboogaloo.init.CreateelectricboogalooModBlocks;
-import net.createelectricboogaloo.init.CreateelectricboogalooModBlockEntities;
-
 import java.util.function.Supplier;
 import java.util.function.Function;
 import java.util.function.BiConsumer;
@@ -53,11 +49,6 @@ public class CreateelectricboogalooMod {
 		MinecraftForge.EVENT_BUS.register(this);
 
 		IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
-
-		CreateelectricboogalooModBlocks.REGISTRY.register(bus);
-		CreateelectricboogalooModItems.REGISTRY.register(bus);
-
-		CreateelectricboogalooModBlockEntities.REGISTRY.register(bus);
 
 		GeckoLib.initialize();
 	}
