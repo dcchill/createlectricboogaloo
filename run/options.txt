@@ -142,7 +142,7 @@ key_key.jei.showRecipe2:key.mouse.left
 key_key.jei.previousRecipePage:key.keyboard.page.up
 key_key.jei.closeRecipeGui:key.keyboard.escape
 key_key.jei.toggleEditMode:key.keyboard.unknown
-soundCategory_master:1.0
+soundCategory_master:0.0
 soundCategory_music:0.0
 soundCategory_record:1.0
 soundCategory_weather:1.0
