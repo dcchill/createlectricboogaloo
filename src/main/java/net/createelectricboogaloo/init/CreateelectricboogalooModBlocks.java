@@ -10,6 +10,8 @@ import net.minecraftforge.registries.DeferredRegister;
 
 import net.minecraft.world.level.block.Block;
 
+import net.createelectricboogaloo.block.CombussinEnginePartBlock;
+import net.createelectricboogaloo.block.CombussinEngineBlock;
 import net.createelectricboogaloo.CreateelectricboogalooMod;
 
 public class CreateelectricboogalooModBlocks {

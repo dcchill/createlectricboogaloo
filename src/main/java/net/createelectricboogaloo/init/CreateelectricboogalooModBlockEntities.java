@@ -11,6 +11,8 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.Block;
 
+import net.createelectricboogaloo.block.entity.CombussinEngineTileEntity;
+import net.createelectricboogaloo.block.entity.CombussinEnginePartBlockEntity;
 import net.createelectricboogaloo.CreateelectricboogalooMod;
 
 public class CreateelectricboogalooModBlockEntities {

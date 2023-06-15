@@ -7,6 +7,7 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.api.distmarker.Dist;
 
 import net.createelectricboogaloo.init.CreateelectricboogalooModBlockEntities;
+import net.createelectricboogaloo.block.renderer.CombussinEngineTileRenderer;
 import net.createelectricboogaloo.CreateelectricboogalooMod;
 
 @Mod.EventBusSubscriber(modid = CreateelectricboogalooMod.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)

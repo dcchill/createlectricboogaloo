@@ -13,6 +13,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.BlockItem;
 
+import net.createelectricboogaloo.block.display.CombussinEngineDisplayItem;
 import net.createelectricboogaloo.CreateelectricboogalooMod;
 
 public class CreateelectricboogalooModItems {
